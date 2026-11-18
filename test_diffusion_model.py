@@ -28,6 +28,10 @@ class DiffusionModelTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             diffusion_step(np.arange(5.0), diffusivity=1.0, dx=1.0, dt=1.0)
 
+    def test_negative_num_steps_are_rejected(self):
+        with self.assertRaises(ValueError):
+            run_diffusion(np.arange(5.0), diffusivity=0.1, dx=1.0, dt=1.0, num_steps=-1)
+
 
 if __name__ == "__main__":
     unittest.main()

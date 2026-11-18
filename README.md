@@ -27,3 +27,9 @@ elevation = run_diffusion(
 ```
 
 Run the interactive example in `simple-diffusion-model-hill-slope.ipynb`.
+
+Install the notebook dependencies with:
+
+```bash
+python -m pip install -r requirements.txt
+```

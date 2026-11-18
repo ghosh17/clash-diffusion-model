@@ -53,7 +53,7 @@ def diffusion_step(profile, diffusivity, dx, dt):
 
 def run_diffusion(profile, diffusivity, dx, dt, num_steps):
     """Run a hillslope diffusion model for a number of time steps."""
-    if num_steps < 0:
+    if not isinstance(num_steps, (int, np.integer)) or num_steps < 0:
         raise ValueError("num_steps must be non-negative")
 
     elevation = np.asarray(profile, dtype=float).copy()
